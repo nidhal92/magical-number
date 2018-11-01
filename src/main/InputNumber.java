@@ -11,9 +11,9 @@ public class InputNumber {
 
     public int readMinValue() {
         try {
-            Scanner in = new Scanner(System.in);
+            Scanner tScanner = new Scanner(System.in);
             System.out.println("Enter Min Int ");
-            this.mIMinValue = in.nextInt();
+            this.mIMinValue = tScanner.nextInt();
             return mIMinValue;
         }
         catch (InputMismatchException mException){
@@ -24,9 +24,9 @@ public class InputNumber {
 
     public int readMaxValue() {
         try {
-            Scanner in = new Scanner(System.in);
+            Scanner tScanner = new Scanner(System.in);
             System.out.println("Enter Max Int ");
-            this.mIMaxValue = in.nextInt();
+            this.mIMaxValue = tScanner.nextInt();
             if (!isBigger())
                 return readMaxValue();
             return mIMaxValue;

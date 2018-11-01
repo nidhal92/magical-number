@@ -2,7 +2,7 @@ package main;
 
 public class Main  {
 
-    public static void main(String[] args) {
+    public static void main(String[] pSArgs) {
 
          InputNumber tInput =new InputNumber();
 
@@ -22,7 +22,7 @@ public class Main  {
         }
     }
 
-    private static void display(int pICount) {
+    public static void display(int pICount) {
         if (pICount == 0) {
             System.out.println(0);
             return;

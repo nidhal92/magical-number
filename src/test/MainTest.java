@@ -1,17 +1,32 @@
 package test;
 
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
+import main.Main;
+
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+
 public class MainTest extends TestCase {
-    int mIMin=0;
+  private   OutputStream mOutputStream = new ByteArrayOutputStream();
+ private    PrintStream mPrintStream = new PrintStream(mOutputStream);
 
-            int mImax ;
 
+    public void testDisplayMultipleOfThreeChar() {
 
-    public void testDisplayMagicalNumber(){
-        Assert.assertNotNull(mIMin);
+        System.setOut(mPrintStream);
 
-}
+       Main.display(3);
+        assertEquals("H"+ System.lineSeparator(), mOutputStream.toString());
+
+    }
+    public void testDisplayMultipleOfFiveChar() {
+        System.setOut(mPrintStream);
+
+        Main.display(5);
+        assertEquals("S"+ System.lineSeparator(), mOutputStream.toString());
+
+    }
 
 }
